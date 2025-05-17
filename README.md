@@ -110,5 +110,9 @@ npm install
   ...
 ]
 
+## 📸 Screenshot
+
+![Notification UI](assets/image.png)
+
 
 
