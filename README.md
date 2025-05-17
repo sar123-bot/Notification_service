@@ -69,15 +69,15 @@ TWILIO_AUTH=your_twilio_auth_token
 TWILIO_PHONE=+1234567890
 
 
-###Install dependencies
+### Install dependencies
 npm install
 
-###Running the Server and Worker
+### Running the Server and Worker
  -Start your MongoDB and Redis servers.
 -Start the Express API server:node src/index.js
 -In a separate terminal, start the queue worker to process notification jobs:node src/worker.js
 
-###API Usage
+### API Usage
  -Send Notification:POST /notifications
 -Request body JSON:
 
