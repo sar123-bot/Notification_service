@@ -73,27 +73,29 @@ TWILIO_PHONE=+1234567890
 npm install
 
 ### Running the Server and Worker
- -Start your MongoDB and Redis servers.
--Start the Express API server:node src/index.js
--In a separate terminal, start the queue worker to process notification jobs:node src/worker.js
+
+ - Start your MongoDB and Redis servers.
+- Start the Express API server:node src/index.js
+- In a separate terminal, start the queue worker to process notification jobs:node src/worker.js
 
 ### API Usage
- -Send Notification:POST /notifications
--Request body JSON:
+
+ - Send Notification:POST /notifications
+- Request body JSON:
 
 
-{
+- {
   "userId": "123",
   "type": "sms",          // "email", "sms", or "in-app"
   "message": "Hello!",
   "phoneNumber": "+911234567890"  // required for SMS only
 }
--Example cURL command:curl -X POST http://localhost:3000/notifications \
+-  Example cURL command:curl -X POST http://localhost:3000/notifications \
   -H "Content-Type: application/json" \
   -d '{"userId":"123","type":"sms","message":"Hello via SMS!","phoneNumber":"+911234567890"}'
--Get User Notifications
--Example:curl http://localhost:3000/users/123/notifications
--Response:[
+- Get User Notifications
+- Example:curl http://localhost:3000/users/123/notifications
+- Response:[
   {
     "_id": "123abc",
     "userId": "123",
