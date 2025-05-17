@@ -94,7 +94,7 @@ npm install
 -  curl -X POST http://localhost:3000/notifications \
   -H "Content-Type: application/json" \
   -d '{"userId":"123","type":"sms","message":"Hello via SMS!","phoneNumber":"+911234567890"}'
-   ### Get User Notifications
+  ### Get User Notifications
 - Example:curl http://localhost:3000/users/123/notifications
 - Response:
 - [
