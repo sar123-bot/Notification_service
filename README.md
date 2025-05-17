@@ -59,79 +59,41 @@ Supports sending notifications via Email, SMS (using Twilio), and in-app notific
 ### Environment Variables
 
 Create a `.env` file in the project root with:
-
-
-env
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/notifications
 REDIS_URL=redis://127.0.0.1:6379
-
 SMTP_USER=your_email@example.com
 SMTP_PASS=your_email_password
-
 TWILIO_SID=your_twilio_account_sid
 TWILIO_AUTH=your_twilio_auth_token
 TWILIO_PHONE=+1234567890
 
 
-Install dependencies
-bash
-Copy
-Edit
+###Install dependencies
 npm install
-Running the Server and Worker
-Start your MongoDB and Redis servers.
 
-Start the Express API server:
+###Running the Server and Worker
+ ---Start your MongoDB and Redis servers.
+---Start the Express API server:node src/index.js
+---In a separate terminal, start the queue worker to process notification jobs:node src/worker.js
 
-bash
-Copy
-Edit
-node src/index.js
-In a separate terminal, start the queue worker to process notification jobs:
+###API Usage
+ ---Send Notification:POST /notifications
+---Request body JSON:
 
-bash
-Copy
-Edit
-node src/worker.js
-API Usage
-Send Notification
-POST /notifications
 
-Request body JSON:
-
-json
-Copy
-Edit
 {
   "userId": "123",
   "type": "sms",          // "email", "sms", or "in-app"
   "message": "Hello!",
   "phoneNumber": "+911234567890"  // required for SMS only
 }
-Example cURL command:
-
-bash
-Copy
-Edit
-curl -X POST http://localhost:3000/notifications \
+---Example cURL command:curl -X POST http://localhost:3000/notifications \
   -H "Content-Type: application/json" \
   -d '{"userId":"123","type":"sms","message":"Hello via SMS!","phoneNumber":"+911234567890"}'
-Get User Notifications
-GET /users/:id/notifications
-
-Example:
-
-bash
-Copy
-Edit
-curl http://localhost:3000/users/123/notifications
-Response:
-
-json
-Copy
-Edit
-[
+---Get User Notifications
+---Example:curl http://localhost:3000/users/123/notifications
+---Response:[
   {
     "_id": "123abc",
     "userId": "123",
@@ -143,3 +105,6 @@ Edit
   },
   ...
 ]
+
+
+
