@@ -27,20 +27,20 @@ Supports sending notifications via Email, SMS (using Twilio), and in-app notific
 
 ## Project Structure
 
-├── src
-│ ├── config
-│ │ └── queue.js # Bull queue setup
-│ ├── models
-│ │ └── Notification.js # Mongoose schema for notifications
-│ ├── routes
-│ │ └── notifications.js # API route handlers
-│ ├── utils
-│ │ └── sendSMS.js # Twilio SMS sending utility
-│ ├── worker.js # Queue worker processing notifications
-│ └── index.js # Express server entry point
-├── .env # Environment variables
-├── package.json
-└── README.md
+- ├── src
+- │ ├── config
+- │ │ └── queue.js # Bull queue setup
+- │ ├── models
+- │ │ └── Notification.js # Mongoose schema for notifications
+- │ ├── routes
+- │ │ └── notifications.js # API route handlers
+- │ ├── utils
+- │ │ └── sendSMS.js # Twilio SMS sending utility
+- │ ├── worker.js # Queue worker processing notifications
+- │ └── index.js # Express server entry point
+- ├── .env # Environment variables
+- ├── package.json
+- └── README.md
 
 
 ---
