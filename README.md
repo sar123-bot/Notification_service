@@ -108,7 +108,30 @@ npm install
     "createdAt": "2025-05-17T11:30:30.230Z"
   },
   ...
+
 ]
+
+## 🧠 Why Bull + Redis instead of RabbitMQ or Kafka?
+
+For this Notification Service, **Bull** (a Node.js job queue) paired with **Redis** was chosen over more complex message brokers like **RabbitMQ** or **Kafka** for several practical reasons:
+
+### ✅ Simplicity and Integration
+- **Bull** is purpose-built for Node.js and integrates seamlessly.
+- It requires minimal setup and configuration compared to RabbitMQ or Kafka.
+- Redis is lightweight and easy to run locally or in the cloud, making development faster.
+
+### ✅ Built-in Features for Notifications
+- Bull provides **built-in support for retries**, **delayed jobs**, **job prioritization**, and **failure handling**, all essential for notification delivery.
+- These features reduce boilerplate code and make it easier to maintain the system.
+
+### ✅ Use Case Fit
+- This service is a lightweight **background job processing** system, not a high-throughput data stream.
+- Kafka is ideal for **massive real-time data pipelines**, and RabbitMQ for **enterprise-level message orchestration** — both are overkill for this scope.
+
+### ✅ Faster Development and Deployment
+- Bull + Redis can be set up quickly and deployed with fewer moving parts.
+- Ideal for **prototyping**, **intern projects**, or **microservices** that need background processing without complex dependencies.
+
 
 ## 📸 Screenshot
 
