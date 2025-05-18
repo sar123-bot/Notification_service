@@ -59,14 +59,14 @@ Supports sending notifications via Email, SMS (using Twilio), and in-app notific
 ### Environment Variables
 
 Create a `.env` file in the project root with:
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/notifications
-REDIS_URL=redis://127.0.0.1:6379
-SMTP_USER=your_email@example.com
-SMTP_PASS=your_email_password
-TWILIO_SID=your_twilio_account_sid
-TWILIO_AUTH=your_twilio_auth_token
-TWILIO_PHONE=+1234567890
+- PORT=3000
+- MONGODB_URI=mongodb://localhost:27017/notifications
+- REDIS_URL=redis://127.0.0.1:6379
+- SMTP_USER=your_email@example.com
+- SMTP_PASS=your_email_password
+- TWILIO_SID=your_twilio_account_sid
+- TWILIO_AUTH=your_twilio_auth_token
+- TWILIO_PHONE=+1234567890
 
 
 ### Install dependencies
@@ -74,7 +74,7 @@ npm install
 
 ### Running the Server and Worker
 
- - Start your MongoDB and Redis servers.
+- Start your MongoDB and Redis servers.
 - Start the Express API server:node src/index.js
 - In a separate terminal, start the queue worker to process notification jobs:node src/worker.js
 
