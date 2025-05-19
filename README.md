@@ -82,14 +82,14 @@ npm install
 
  ### Send Notification:POST /notifications
 - Request body JSON:
-
-
-- {
-  "userId": "123",
+  ```bash
+  {
+  "userId": "123",  
   "type": "sms",          // "email", "sms", or "in-app"
   "message": "Hello!",
   "phoneNumber": "+911234567890"  // required for SMS only
-}
+  }
+
 -  Example cURL command:
 -  curl -X POST http://localhost:3000/notifications \
   -H "Content-Type: application/json" \
@@ -98,17 +98,17 @@ npm install
 - Example:curl http://localhost:3000/users/123/notifications
 - Response:
   ```bash
-[
-  {
-    "_id": "123abc",
-    "userId": "123",
-    "type": "sms",
-    "message": "Hello via SMS!",
-    "delivered": true,
-    "error": null,
-    "createdAt": "2025-05-17T11:30:30.230Z"
-  },
-  ]
+  [  
+  {  
+    "_id": "123abc",  
+    "userId": "123",  
+    "type": "sms",  
+    "message": "Hello via SMS!",  
+    "delivered": true,  
+    "error": null,  
+    "createdAt": "2025-05-17T11:30:30.230Z"  
+  },  
+  ]  
 
 ## 🧠 Why Bull + Redis instead of RabbitMQ or Kafka?
 
