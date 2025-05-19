@@ -26,7 +26,7 @@ Supports sending notifications via Email, SMS (using Twilio), and in-app notific
 ---
 
 ## Project Structure
-
+```bash
 - ├── src
 - │ ├── config
 - │ │ └── queue.js # Bull queue setup
