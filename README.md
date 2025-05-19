@@ -97,7 +97,8 @@ npm install
   ### Get User Notifications
 - Example:curl http://localhost:3000/users/123/notifications
 - Response:
-- [
+  ```bash
+[
   {
     "_id": "123abc",
     "userId": "123",
@@ -107,9 +108,7 @@ npm install
     "error": null,
     "createdAt": "2025-05-17T11:30:30.230Z"
   },
-  ...
-
-]
+  ]
 
 ## 🧠 Why Bull + Redis instead of RabbitMQ or Kafka?
 
